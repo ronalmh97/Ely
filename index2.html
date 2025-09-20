@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flor Especial</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flor Especial</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body onclick="PlayAudio()">
-    <audio id="musica1" autoplay>
-        <source src="Flores Amarillas2.mp3" type="audio/mpeg">
-    </audio>
+  <audio id="musica1" autoplay>
+    <source src="Flores Amarillas2.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- Flor -->
-    <div class="sunflower">
-        <div class="flower_wrapper">
-            <div class="flower_stem"></div>
-            <div class="flower_center"></div>
+  <!-- Flor completa -->
+  <div class="sunflower">
+    <div class="flower_wrapper">
+      <div class="flower_stem"></div>
+      <div class="flower_center"></div>
 
-            <!-- Pétalos -->
-            <div class="flower_petal flower_petal-1"></div>
-            <div class="flower_petal flower_petal-2"></div>
-            <div class="flower_petal flower_petal-3"></div>
-            <div class="flower_petal flower_petal-4"></div>
-            <div class="flower_petal flower_petal-5"></div>
-            <div class="flower_petal flower_petal-6"></div>
-            <div class="flower_petal flower_petal-7"></div>
-            <div class="flower_petal flower_petal-8"></div>
-            <div class="flower_petal flower_petal-9"></div>
-            <div class="flower_petal flower_petal-10"></div>
-            <div class="flower_petal flower_petal-11"></div>
-            <div class="flower_petal flower_petal-12"></div>
+      <!-- Pétalos en círculo -->
+      <div class="flower_petal flower_petal-1"></div>
+      <div class="flower_petal flower_petal-2"></div>
+      <div class="flower_petal flower_petal-3"></div>
+      <div class="flower_petal flower_petal-4"></div>
+      <div class="flower_petal flower_petal-5"></div>
+      <div class="flower_petal flower_petal-6"></div>
+      <div class="flower_petal flower_petal-7"></div>
+      <div class="flower_petal flower_petal-8"></div>
+      <div class="flower_petal flower_petal-9"></div>
+      <div class="flower_petal flower_petal-10"></div>
+      <div class="flower_petal flower_petal-11"></div>
+      <div class="flower_petal flower_petal-12"></div>
 
-            <!-- Hojas -->
-            <div class="flower_leaf flower_leaf-1"></div>
-            <div class="flower_leaf flower_leaf-2"></div>
-        </div>
+      <!-- Hojas -->
+      <div class="flower_leaf flower_leaf-1"></div>
+      <div class="flower_leaf flower_leaf-2"></div>
     </div>
+  </div>
 
-    <!-- Bolitas doradas -->
-    <div class="light light-1"></div>
-    <div class="light light-2"></div>
-    <div class="light light-3"></div>
-    <div class="light light-4"></div>
-    <div class="light light-5"></div>
-    <div class="light light-6"></div>
-    <div class="light light-7"></div>
-    <div class="light light-8"></div>
+  <!-- Bolitas doradas flotantes -->
+  <div class="light light-1"></div>
+  <div class="light light-2"></div>
+  <div class="light light-3"></div>
+  <div class="light light-4"></div>
+  <div class="light light-5"></div>
+  <div class="light light-6"></div>
 
-    <!-- Cometas -->
-    <div class="comet"></div>
-    <div class="comet comet-2"></div>
-    <div class="comet comet-3"></div>
+  <!-- Pétalos cayendo -->
+  <div class="falling-petal"></div>
+  <div class="falling-petal"></div>
+  <div class="falling-petal"></div>
 
-    <!-- Texto especial -->
-    <p id="text">PARA TI ELY, QUE EL DÍA DE HOY SEA MUY ESPECIAL Y TE VAYA BIEN EN TU TRABAJITO</p>
+  <!-- Cometas -->
+  <div class="comet"></div>
+  <div class="comet comet-2"></div>
+  <div class="comet comet-3"></div>
 
-    <script>
-        function PlayAudio() {
-            document.getElementById("musica1").play();
-        }
-    </script>
+  <!-- Texto con efecto de brillo -->
+  <p id="text">PARA TI ELY, QUE EL DÍA DE HOY SEA MUY ESPECIAL Y TE VAYA BIEN EN TU TRABAJITO</p>
+
+  <script>
+    function PlayAudio() {
+      document.getElementById("musica1").play();
+    }
+  </script>
 </body>
 </html>
