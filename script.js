@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < 15; i++) {
       createParticle(e.clientX, e.clientY);
     }
+
+    // Redirigir a index2.html después de 0.5 segundos
+    setTimeout(() => {
+      window.location.href = "index2.html";
+    }, 500);
   });
 
   // Función para crear partículas

@@ -129,3 +129,15 @@ body {
                  0 0 45px rgba(255, 215, 0, 0.4);
   }
 }
+
+.particle {
+  position: absolute;
+  background: gold;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: transform 1.2s ease-out, opacity 1.2s ease-out;
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}

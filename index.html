@@ -76,6 +76,7 @@
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
       animation: beat 3.5s infinite;
       transition: transform 0.3s ease;
+      cursor: pointer;
     }
 
     /* Dos círculos superiores para formar el corazón */
@@ -133,6 +134,19 @@
       }
     }
 
+    /* ===== Partículas ===== */
+    .particle {
+      position: absolute;
+      background: gold;
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: transform 1.2s ease-out, opacity 1.2s ease-out;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+
     /* ===== Ajustes para celulares ===== */
     @media (max-width: 480px) {
       .heart {
@@ -181,5 +195,6 @@
     <span class="heart-text">Toca el corazón</span>
   </a>
 
+  <script src="script.js"></script>
 </body>
 </html>
