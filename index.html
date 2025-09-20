@@ -26,8 +26,7 @@
     /* ===== Texto superior ===== */
     .bday {
       text-align: center;
-      font-size: 4vw; /* Tamaño relativo */
-      max-font-size: 24px;
+      font-size: 4vw;
       font-weight: 700;
       color: #FFD700;
       margin: 20px auto;
@@ -65,46 +64,45 @@
 
     .heart {
       position: relative;
-      background-color: #FFD700;
       width: 25vw;
       height: 25vw;
       max-width: 250px;
       max-height: 250px;
-      transform: rotate(-45deg);
+      background-color: #FFD700;
+      transform: rotate(-45deg); /* rotamos para dar la forma base */
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
       animation: beat 3.5s infinite;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
       transition: transform 0.3s ease;
     }
 
-    .heart::after,
-    .heart::before {
-      background-color: #FFD700;
+    /* Los dos círculos superiores que forman el corazón */
+    .heart::before,
+    .heart::after {
       content: "";
-      border-radius: 50%;
       position: absolute;
       width: 25vw;
       height: 25vw;
       max-width: 250px;
       max-height: 250px;
-    }
-
-    .heart::after {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
+      background-color: #FFD700;
+      border-radius: 50%;
     }
 
     .heart::before {
       top: -50%;
       left: 0;
-      transform: translateY(50%);
     }
 
-    /* Efecto hover solo en laptop */
+    .heart::after {
+      top: 0;
+      left: 50%;
+    }
+
+    /* Efecto hover solo en PC */
     @media (hover: hover) {
       .heart:hover {
         transform: rotate(-45deg) scale(1.05);
-        box-shadow: 0 0 30px rgba(255, 215, 0, 1);
+        box-shadow: 0 0 35px rgba(255, 215, 0, 1);
       }
     }
 
@@ -117,15 +115,15 @@
       }
     }
 
-    /* ===== Ajustes para celulares pequeños ===== */
+    /* ===== Ajustes para celulares ===== */
     @media (max-width: 480px) {
       .heart {
         width: 40vw;
         height: 40vw;
       }
 
-      .heart::after,
-      .heart::before {
+      .heart::before,
+      .heart::after {
         width: 40vw;
         height: 40vw;
       }
