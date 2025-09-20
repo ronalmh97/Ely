@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /* Fondo morado con animación */
+        /* === Fondo morado con animación === */
         .back {
             position: fixed;
             top: 0;
@@ -15,49 +15,55 @@
             animation: gradientBG 10s ease infinite;
         }
 
-        /* Animación del fondo */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Corazón dorado */
-        .heart {
+        /* === Corazón dorado grande === */
+        .heart-link {
+            display: block;
             position: absolute;
-            margin: auto;
-            top: 170px;
-            right: 0;
-            bottom: 0;
-            left: 0;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .heart {
             background-color: #FFD700;
-            height: 150px;
-            width: 150px;
+            height: 220px;
+            width: 220px;
+            position: relative;
             transform: rotate(-45deg);
             animation: beat 2s infinite, glow 2s infinite alternate;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
         }
 
         .heart:after,
         .heart:before {
-            background-color: #FFD700;
             content: "";
-            border-radius: 50%;
             position: absolute;
-            width: 150px;
-            height: 150px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
         }
 
         .heart:after {
             top: 0;
-            left: 80px;
+            left: 110px;
         }
 
         .heart:before {
-            top: -80px;
+            top: -110px;
             left: 0;
         }
 
-        /* Animación del corazón */
+        /* Animación de latido */
         @keyframes beat {
             0%, 100% { transform: scale(1) rotate(-45deg); }
             50% { transform: scale(1.2) rotate(-45deg); }
@@ -65,52 +71,39 @@
 
         /* Efecto de brillo */
         @keyframes glow {
-            from { box-shadow: 0 0 10px #FFD700; }
-            to { box-shadow: 0 0 30px #FFD700; }
+            from { box-shadow: 0 0 15px #FFD700; }
+            to { box-shadow: 0 0 35px #FFD700; }
         }
 
-        /* Caja del texto */
+        /* === Texto superior con efecto === */
         .bday {
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-            font-size: 15px;
+            font-size: 22px;
             font-family: 'Nunito', sans-serif;
-            font-weight: 600;
-            color: #ffffff;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: rgba(87, 10, 87, 0.8);
-            border-radius: 8px;
+            font-weight: 700;
+            color: #FFD700;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(80, 0, 80, 0.4);
+            border-radius: 12px;
+            max-width: 90%;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.6),
+                        0 0 40px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            animation: fadeGlow 3s infinite alternate ease-in-out;
         }
 
-        /* Botón morado */
-        button {
-            background-color: #A91079;
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            margin-top: 70vh;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #570A57;
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .elements {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* Animación de brillo del texto */
+        @keyframes fadeGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+                opacity: 0.8;
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 215, 0, 1),
+                             0 0 40px rgba(255, 215, 0, 0.7);
+                opacity: 1;
+            }
         }
     </style>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -119,20 +112,17 @@
 </head>
 <body>
     <div class="back">
+        <!-- Texto superior con efecto -->
         <div class="bday">
             Buenas días Ely <br>
             Te envío esta flor en este día especial.<br>
-            Que tengas un bonito día, seguro ya trabajaras
+            Que tengas un bonito día, seguro ya trabajas
         </div>
-        
-        <div class="elements">
+
+        <!-- Corazón clickeable -->
+        <a href="index2.html" class="heart-link">
             <div class="heart"></div>
-            <footer>
-                <div class="boton">
-                    <button><a href="index2.html"><span>Haz clic aquí</span></a></button>
-                </div>
-            </footer>
-        </div>
+        </a>
     </div>
 </body>
 </html>
