@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        .back {
+    .back {
+    background: linear-gradient(to top, #9d4edd, #2e003e); /* Morado claro a oscuro */
+    animation-name: backdiv;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
 
-            position: fixed;
-            padding: 0;
-            margin: 0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            animation-name: backdiv;
-            animation-duration: 3500ms;
-            animation-iteration-count: infinite;
-            height: 100vh;
-        }
 
         .heart {
             position: absolute;
@@ -26,7 +18,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: yellow;
+            background-color: #ffd700;
             height: 150px;
             width: 150px;
             transform: rotate(-45deg);
@@ -36,7 +28,7 @@
         }
 
         .heart:after {
-            background-color: yellow;
+            background-color: #ffd700;
             content: "";
             border-radius: 50%;
             position: absolute;
@@ -47,7 +39,7 @@
         }
 
         .heart:before {
-            background-color: yellow;
+            background-color: #ffd700;
             content: "";
             border-radius: 50%;
             position: absolute;
