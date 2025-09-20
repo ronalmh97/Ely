@@ -60,6 +60,9 @@
       transform: translate(-50%, -50%);
       text-decoration: none;
       z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .heart {
@@ -69,13 +72,13 @@
       max-width: 250px;
       max-height: 250px;
       background-color: #FFD700;
-      transform: rotate(-45deg); /* forma base */
+      transform: rotate(-45deg);
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
       animation: beat 3.5s infinite;
       transition: transform 0.3s ease;
     }
 
-    /* Los dos círculos superiores que forman el corazón */
+    /* Dos círculos superiores para formar el corazón */
     .heart::before,
     .heart::after {
       content: "";
@@ -96,6 +99,21 @@
     .heart::after {
       top: 0;
       left: 50%;
+    }
+
+    /* Texto dentro del corazón */
+    .heart-text {
+      position: absolute;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+      pointer-events: none; /* clic funciona en todo el corazón */
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
     }
 
     /* Hover solo en PC */
@@ -132,12 +150,19 @@
         font-size: 5vw;
         padding: 8px;
       }
+
+      .heart-text {
+        font-size: 1rem;
+      }
     }
 
     /* ===== Ajustes solo para laptops o pantallas grandes ===== */
     @media (min-width: 1024px) {
       .heart-link {
-        top: 85%; /* Mueve el corazón un poco más abajo en laptop */
+        top: 85%; /* Solo mueve el corazón en pantallas grandes */
+      }
+      .heart-text {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -150,9 +175,11 @@
     Que tengas un bonito día, seguro ya trabajas
   </div>
 
-  <!-- Corazón como botón -->
+  <!-- Corazón como botón con texto -->
   <a href="index2.html" class="heart-link">
     <div class="heart"></div>
+    <span class="heart-text">Toca el corazón</span>
   </a>
+
 </body>
 </html>
