@@ -1,3 +1,4 @@
+/* ===== Fondo general ===== */
 body {
   margin: 0;
   background: linear-gradient(to bottom, #001F3F, #000814);
@@ -17,82 +18,94 @@ body {
   text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
 }
 
-/* ===== Flor centrada ===== */
-.sunflower {
+/* ===== Contenedor de la flor ===== */
+.flower-container {
   position: relative;
-  width: 200px;
-  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Tallo */
+/* ===== Flor ===== */
+.sunflower {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Centro del girasol ===== */
+.center {
+  position: absolute;
+  top: 40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #FFA500, #FF8C00);
+  border-radius: 50%;
+  box-shadow: 0 0 25px #FFD700;
+  z-index: 2;
+}
+
+/* ===== Pétalos ===== */
+.petals {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+}
+
+.petal {
+  position: absolute;
+  width: 50px;
+  height: 120px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 25px 25px 0 0;
+  transform-origin: bottom center;
+  left: 50%;
+  top: 50%;
+  transform: rotate(calc(var(--i) * 30deg)) translateY(-100px);
+  z-index: 1;
+}
+
+/* ===== Tallo ===== */
 .stem {
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 20px;
-  height: 200px;
+  height: 180px;
   background: linear-gradient(to bottom, #1e5128, #4e9f3d);
   border-radius: 10px;
   z-index: 0;
 }
 
-/* Hojas */
+/* ===== Hojas ===== */
 .leaf {
   position: absolute;
-  width: 80px;
-  height: 40px;
+  width: 90px;
+  height: 45px;
   background: radial-gradient(circle, #4CAF50, #2E7D32);
   border-radius: 50%;
-  top: 120px;
+  top: 200px;
+  z-index: 1;
 }
 
 .leaf-left {
-  left: -60px;
+  left: -70px;
   transform: rotate(-30deg);
 }
 
 .leaf-right {
-  right: -60px;
+  right: -70px;
   transform: rotate(30deg);
 }
 
-/* Centro del girasol */
-.center {
-  position: absolute;
-  top: 30px;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, #FFA500, #FF8C00);
-  border-radius: 50%;
-  box-shadow: 0 0 20px #FFD700;
-  z-index: 2;
-}
-
-/* Pétalos en círculo */
-.petals {
-  position: absolute;
-  top: 30px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.petal {
-  position: absolute;
-  width: 40px;
-  height: 100px;
-  background: radial-gradient(circle, #FFD700, #FFA500);
-  border-radius: 20px 20px 0 0;
-  transform-origin: bottom center;
-  top: 30px;
-  left: 60px;
-  transform: rotate(calc(var(--i) * 30deg));
-}
-
-/* ===== Luces flotando ===== */
+/* ===== Luces flotantes ===== */
 .light {
   position: absolute;
   width: 6px;
