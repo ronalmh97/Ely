@@ -1,125 +1,112 @@
-/* ===== Fondo azul oscuro ===== */
 body {
-  background: linear-gradient(to top, #001F3F, #000814);
+  margin: 0;
+  background: linear-gradient(to bottom, #001F3F, #000814);
   min-height: 100vh;
-  overflow: hidden;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-/* ===== Texto especial ===== */
 #text {
   position: absolute;
   bottom: 10px;
-  left: 10px;
   color: #FFD700;
   font-family: 'Pacifico', cursive;
-  font-size: 22px;
+  font-size: 20px;
   text-shadow: 0 0 10px #FFD700, 0 0 20px #FFA500;
-  animation: fadeIn 3s ease-in-out;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== Flor ===== */
-.flower_wrapper {
+/* ===== Flor centrada ===== */
+.sunflower {
   position: relative;
-  transform: translateY(20px);
+  width: 200px;
+  height: 300px;
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Centramos el girasol completo */
+  justify-content: center;
+  align-items: center;
 }
 
-.flower_stem {
-  width: 2vmin;
-  height: 50vmin;
-  background: linear-gradient(to bottom, #4e9f3d, #1e5128);
-  border-radius: 4vmin;
-  margin: 0 auto;
-}
-
-.flower_center {
-  position: absolute;
-  top: -7.5vmin; /* Ajuste para que quede perfectamente sobre el tallo */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 15vmin;
-  height: 15vmin;
-  background: radial-gradient(circle, #FFD700, #FFA500);
-  border-radius: 50%;
-  box-shadow: 0 0 20px #FFD700;
-  z-index: 10;
-}
-
-/* ===== Pétalos fijos ===== */
-.flower_petal {
-  position: absolute;
-  bottom: 38vmin;
-  left: 50%;
-  width: 6vmin;
-  height: 16vmin;
-  background: radial-gradient(circle, #FFD700, #FFB300);
-  border-radius: 50%;
-  transform-origin: center bottom;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
-/* Rotación de pétalos */
-.flower_petal-1 { transform: translateX(-50%) rotate(0deg); }
-.flower_petal-2 { transform: translateX(-50%) rotate(30deg); }
-.flower_petal-3 { transform: translateX(-50%) rotate(60deg); }
-.flower_petal-4 { transform: translateX(-50%) rotate(90deg); }
-.flower_petal-5 { transform: translateX(-50%) rotate(120deg); }
-.flower_petal-6 { transform: translateX(-50%) rotate(150deg); }
-.flower_petal-7 { transform: translateX(-50%) rotate(180deg); }
-.flower_petal-8 { transform: translateX(-50%) rotate(210deg); }
-.flower_petal-9 { transform: translateX(-50%) rotate(240deg); }
-.flower_petal-10 { transform: translateX(-50%) rotate(270deg); }
-.flower_petal-11 { transform: translateX(-50%) rotate(300deg); }
-.flower_petal-12 { transform: translateX(-50%) rotate(330deg); }
-
-/* ===== Hojas ===== */
-.flower_leaf {
-  position: absolute;
-  bottom: 15vmin;
-  width: 8vmin;
-  height: 14vmin;
-  background: radial-gradient(circle, #b7e4c7, #40916c);
-  border-radius: 10vmin 2vmin 10vmin 2vmin;
-}
-
-.flower_leaf-1 {
-  left: -8vmin;
-  transform: rotate(-20deg);
-}
-
-.flower_leaf-2 {
-  left: 8vmin;
-  transform: rotate(20deg);
-}
-
-/* ===== Bolitas doradas flotando ===== */
-.light {
+/* Tallo */
+.stem {
   position: absolute;
   bottom: 0;
-  width: 1vmin;
-  height: 1vmin;
-  background-color: #FFD700;
+  width: 20px;
+  height: 200px;
+  background: linear-gradient(to bottom, #1e5128, #4e9f3d);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+/* Hojas */
+.leaf {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(circle, #4CAF50, #2E7D32);
   border-radius: 50%;
+  top: 120px;
+}
+
+.leaf-left {
+  left: -60px;
+  transform: rotate(-30deg);
+}
+
+.leaf-right {
+  right: -60px;
+  transform: rotate(30deg);
+}
+
+/* Centro del girasol */
+.center {
+  position: absolute;
+  top: 30px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #FFA500, #FF8C00);
+  border-radius: 50%;
+  box-shadow: 0 0 20px #FFD700;
+  z-index: 2;
+}
+
+/* Pétalos en círculo */
+.petals {
+  position: absolute;
+  top: 30px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 100px;
+  background: radial-gradient(circle, #FFD700, #FFA500);
+  border-radius: 20px 20px 0 0;
+  transform-origin: bottom center;
+  top: 30px;
+  left: 60px;
+  transform: rotate(calc(var(--i) * 30deg));
+}
+
+/* ===== Luces flotando ===== */
+.light {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #FFD700;
+  border-radius: 50%;
+  bottom: 0;
   animation: floatUp 6s linear infinite;
 }
 
 .light-1 { left: 20%; animation-delay: 0s; }
-.light-2 { left: 40%; animation-delay: 1s; }
-.light-3 { left: 60%; animation-delay: 2s; }
-.light-4 { left: 70%; animation-delay: 3s; }
-.light-5 { left: 80%; animation-delay: 4s; }
-.light-6 { left: 90%; animation-delay: 5s; }
+.light-2 { left: 50%; animation-delay: 2s; }
+.light-3 { left: 70%; animation-delay: 4s; }
+.light-4 { left: 90%; animation-delay: 6s; }
 
 @keyframes floatUp {
   0% { transform: translateY(0); opacity: 0; }
