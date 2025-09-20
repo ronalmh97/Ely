@@ -69,7 +69,7 @@
       max-width: 250px;
       max-height: 250px;
       background-color: #FFD700;
-      transform: rotate(-45deg); /* rotamos para dar la forma base */
+      transform: rotate(-45deg); /* forma base */
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.7);
       animation: beat 3.5s infinite;
       transition: transform 0.3s ease;
@@ -98,7 +98,7 @@
       left: 50%;
     }
 
-    /* Efecto hover solo en PC */
+    /* Hover solo en PC */
     @media (hover: hover) {
       .heart:hover {
         transform: rotate(-45deg) scale(1.05);
@@ -131,6 +131,13 @@
       .bday {
         font-size: 5vw;
         padding: 8px;
+      }
+    }
+
+    /* ===== Ajustes solo para laptops o pantallas grandes ===== */
+    @media (min-width: 1024px) {
+      .heart-link {
+        top: 55%; /* Mueve el corazón un poco más abajo en laptop */
       }
     }
   </style>
