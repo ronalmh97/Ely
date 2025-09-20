@@ -5,22 +5,12 @@
 }
 
 :root {
-    /* Fondo morado degradado */
-    --color-bg: linear-gradient(to top, #9d4edd, #2e003e); 
-
-    /* Tallo con tonos verde suaves */
-    --line-color: linear-gradient(to left top, #a3d9a5 20%, #4e9f3d, #1e5128);
-
-    /* Centro de la flor con un dorado */
-    --flower-center: radial-gradient(circle, #d4af37, #ffef9f);
-
-    /* Hojas en verdes suaves */
-    --leaf-color: radial-gradient(circle, #b7e4c7, #40916c);
-
-    /* Pétalos en tonos lilas y rosas */
-    --petal-color: radial-gradient(circle, #c77dff, #9d4edd);
+    --color-bg: linear-gradient(to top, #00d4ff, #000); 
+    --line-color: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    --flower-center: radial-gradient(circle, #000, #ff5e00);
+    --leaf-color: radial-gradient(circle, #82ff86, #104e1c);
+    --petal-color: radial-gradient(circle, #ff5e00, #ffbb00);
 }
-
 
 body {
     background-image: var(--color-bg);
