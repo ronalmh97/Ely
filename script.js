@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error("❌ No se encontró el elemento '.heart'");
     return;
   } else {
-    console.log("💛 Elemento '.heart' encontrado:", heart);
+    console.log("💛 Elemento '.heart' encontrado:", <div class="heart"></div>);
   }
 
   // Detectar clic en el corazón
